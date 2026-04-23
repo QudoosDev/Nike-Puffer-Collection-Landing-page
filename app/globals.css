@@ -1,0 +1,91 @@
+@import "tailwindcss";
+@import "swiper/css";
+@import "swiper/css/pagination";
+@import "swiper/css/effect-fade";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+@theme {
+  --font-montserrat: var(--font-montserrat);
+}
+
+:root {
+  /*========== Colors from provided CSS ==========*/
+  --header-height: 3.5rem;
+  --white-color: hsl(0, 0%, 100%);
+  --black-color: hsl(0, 0%, 0%);
+  --green-color-gradient: linear-gradient(135deg, hsl(98, 63%, 37%) 0%, hsl(97, 45%, 71%) 100%);
+  --orange-color-gradient: linear-gradient(135deg, hsl(17, 98%, 56%) 0%, hsl(14, 97%, 64%) 100%);
+  --sky-blue-color-gradient: linear-gradient(135deg, hsl(210, 96%, 55%) 0%, hsl(205, 51%, 73%) 100%);
+  --purple-color-gradient: linear-gradient(135deg, hsl(259, 92%, 63%) 0%, hsl(260, 52%, 68%) 100%);
+
+  /*========== Font and typography ==========*/
+  --body-font: "Montserrat", sans-serif;
+  --bigger-font-size: 1.75rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+
+  --swiper-pagination-color: #fff;
+  --swiper-pagination-bullet-inactive-color: #fff;
+  --swiper-pagination-bullet-inactive-opacity: 0.3;
+  --swiper-pagination-bullet-size: 8px;
+  --swiper-pagination-bullet-horizontal-gap: 6px;
+}
+
+@media (width >= 1150px) {
+  :root {
+    --bigger-font-size: 2.5rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+  }
+}
+
+body {
+  @apply bg-black text-white antialiased overflow-x-hidden;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.swiper-pagination-bullet {
+  @apply transition-all duration-300 bg-white !opacity-40 w-2 h-2 cursor-pointer mx-1.5;
+}
+
+.swiper-pagination-bullet-active {
+  @apply !opacity-100 scale-125;
+}
+
+/* Custom fill animation for buy button */
+.btn-fill-hover {
+  @apply relative overflow-hidden transition-all duration-500 z-10;
+}
+
+.btn-fill-hover::before {
+  content: '';
+  @apply absolute top-0 left-0 w-0 h-full bg-black transition-all duration-500 ease-out -z-10;
+}
+
+.btn-fill-hover:hover::before {
+  @apply w-full;
+}
+
+.btn-fill-hover:hover {
+  @apply text-white;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/20 rounded-full hover:bg-white/40;
+}
