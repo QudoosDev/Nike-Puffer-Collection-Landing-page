@@ -55,4 +55,4 @@ This project was built with a "Mood-First" approach. Every visual element—from
 
 ---
 
-*Designed and Developed for the modern web.*
+*Designed and Developed By Qudoos(Me).*
